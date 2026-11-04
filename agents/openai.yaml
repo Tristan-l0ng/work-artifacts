@@ -1,0 +1,4 @@
+interface:
+  display_name: "Work Artifacts"
+  short_description: "Ask for .work, clean scratch, report retained files"
+  default_prompt: "Use $work-artifacts to use the project's existing .work, ask me to create it if absent, clean up temporary outputs, and report all retained temporary files."
