@@ -4,7 +4,8 @@ description: >
   Keep deliverables with their corresponding project outputs and all
   non-deliverable task files in the project's .work directory. Do not promote
   process notes to deliverables or send them without user authorization. When
-  the user requests cleanup, list cleanup paths in chat for the user to handle.
+  the user requests cleanup, efficiently delete confirmed obsolete task files;
+  hand off only items whose deletion is blocked.
 ---
 
 # Work Artifacts
@@ -31,9 +32,11 @@ description: >
 - 当前项目没有 `.work` 时，告知所需的完整绝对路径，请用户自行创建。确认存在后才能写入；不得自行创建，也不得改在父目录、其他项目、用户目录或系统临时目录另建或借用 `.work` 来绕过此要求。
 - 等待创建期间，可以继续无需临时落盘的工作。只读或原位编辑无需为此要求创建 `.work`。
 
-## 清理按需说明
+## 用户提出清理时直接执行
 
-- 平时及项目结束时，不主动删除、盘点、扫描、统计文件数量或体积、建立台账、生成清单或执行额外的清理验证。
-- 项目完成后，只有用户提出清理时，才做判断所必需的最少查看，并直接在对话里列出 **【待删除】完整绝对路径 + 一句用途或删除理由**。同类内容按目录合并；仍需运行的内容必要时标 **【保留】**。
-- 默认由用户自行处理，不执行删除。不生成清理清单文件或交接清单，不让用户打开文档逐项查找。
+- 平时及项目结束时，不主动删除、盘点、扫描、统计文件数量或体积、建立台账或执行额外的清理验证。
+- 用户提出“清理”“删除无用文件”等要求，即授权清理其指定范围内已确认无用的任务文件。只做判断所必需的最少查看，然后直接高效、成批删除；不要把清理请求解释为只能列清单，也不要重复询问已经明确的删除授权。
+- 删除前确认完整目标路径、用途和归属，保留源码、最终成果、其他任务文件及仍需运行的环境、缓存和安装文件。遇到目录联接或符号链接，只移除链接本身，不跟随链接删除目标内容；保留既有 `.work` 根目录。
+- 优先采用适合当前平台的常规删除方式。某项被自动审批、权限、占用或工具限制阻碍，且无法直接高效完成时，停止处理该项，继续清理其他不受影响的内容；不要反复尝试或绕过安全限制。
+- 只有实际删除受阻、需要用户处理的剩余项，才在聊天中列出 **【待用户删除】完整绝对路径 + 一句受阻原因**；不能把所有清理默认交给用户。简要说明已完成的清理，不为补齐数量、体积而额外长时间扫描，不生成清理清单文件。
 - Codex 初始配置中默认要求删除的内容，继续按原配置处理；本技能不覆盖或扩展这些默认规则。

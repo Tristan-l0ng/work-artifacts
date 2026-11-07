@@ -1,4 +1,4 @@
 interface:
   display_name: "Work Artifacts"
-  short_description: "Keep scratch in .work; list cleanup only on request"
-  default_prompt: "Use $work-artifacts to keep non-deliverable files in the project's .work, ask me to create it if absent, and list cleanup paths in chat only when I request cleanup; preserve Codex's default cleanup behavior."
+  short_description: "Keep scratch in .work; clean efficiently on request"
+  default_prompt: "Use $work-artifacts to keep non-deliverable files in the project's .work, ask me to create it if absent, and efficiently delete confirmed obsolete task files when I request cleanup; hand off only blocked items."
