@@ -3,9 +3,9 @@ name: work-artifacts
 description: >
   Keep deliverables with their corresponding project outputs and all
   non-deliverable task files in the project's .work directory. Do not promote
-  process notes to deliverables or send them without user authorization. When
-  the user requests cleanup, efficiently delete confirmed obsolete task files;
-  hand off only items whose deletion is blocked.
+  process notes to deliverables or extend one-time saving authorization to later
+  Q&A or document updates. When the user requests cleanup, efficiently delete
+  confirmed obsolete task files and hand off only blocked items.
 ---
 
 # Work Artifacts
@@ -21,16 +21,22 @@ description: >
 
 - 落盘前先确认文件用途及交付依据：用户要求交付的文件、为完成任务必需的项目源码/配置，以及实际交付工具必需的简短使用说明，放在对应成果位置；其余过程材料放入本项目 `.work`。仅用于本次执行的临时脚本不属于项目源码成果。
 - 用户要求在聊天中解释、给出简要方案或说明“怎么做”，不等于要求另建文档。自行生成的排查计划、操作草案、进度笔记、核查过程记录、交接备忘及辅助说明，未被要求作为成果交付时，一律放 `.work`。
-- 严禁仅因内容已经写完、文件名含“报告/方案/说明”、现有目录叫“文档”，或为了便于查看，就自行将过程文件认定为成果。不得据此向项目根目录、`文档/`、`docs/` 或交付目录散放文件、另建目录。
+- 严禁仅因内容已经写完、文件名含“报告/方案/说明”、现有目录叫“文档/参考资料”，或为了便于查看，就自行将过程文件认定为成果。不得据此向项目根目录、`文档/`、`docs/` 或交付目录散放文件、另建目录。
 - 真正的结果文件随对应成果归位，例如用户要求的工具及其必要说明放在该工具目录；不得把不同任务的文档笼统归入公共“文档”目录。用户已经明确指定位置时遵循用户要求。
 - 未经用户明确要求，不得将 `.work` 或其他过程材料作为成果提交、打包、上传或发送，也不得将其链接作为交付成果发送。用户明确要求查看某份过程材料时，仅提供该材料，不改变其非成果属性。
-- 发现本轮自行生成的文件放错位置，应移入已存在的本项目 `.work` 并修复引用；不以“说明文档”“方便阅读”为例外。归属不明的历史文件不得擅自批量迁移；上述纠错不改变后文的按需清理规则。
+- 发现本轮自行生成的文件放错位置，应移入已存在的本项目 `.work` 并修复引用。用户要求纠正累计误放时，按其指定范围核对此前擅自添加的文件及已有文档中的追加内容，一并归位并修复引用。归属不明的历史文件不得擅自批量迁移。上述纠错不改变后文的按需清理规则。
+
+## 保存与更新的授权范围
+
+- 用户要求“把这个方案保存，方便以后查阅”，授权范围是当时指定的方案或资料。后续普通问答、选型讨论、截图核对不会自动延长这次授权。完成已授权成果所必需的修改，以及用户明确要求的持续维护，按原任务范围执行。
+- 向现有文档追加章节、改写索引、补充附件，同样需要属于当前授权任务。不得以“原位编辑”“已有方案”为由持续记录后续对话。聊天中能回答的问题直接在聊天中回答，确需落盘的辅助材料进入 `.work`。
+- 为阅读、核对而下载的资料和生成的摘图，先放 `.work`。只有用户要求归档，或它们确属已授权成果的必要组成部分时，才随成果归位。
 
 ## .work 创建规则保持原样
 
 - 沿用当前项目已有的 `.work` 路径或明确约定；位置确实有歧义时再确认。
 - 当前项目没有 `.work` 时，告知所需的完整绝对路径，请用户自行创建。确认存在后才能写入；不得自行创建，也不得改在父目录、其他项目、用户目录或系统临时目录另建或借用 `.work` 来绕过此要求。
-- 等待创建期间，可以继续无需临时落盘的工作。只读或原位编辑无需为此要求创建 `.work`。
+- 等待创建期间，可以继续无需临时落盘的工作。只读或已获授权的原位编辑无需为此要求创建 `.work`。
 
 ## 用户提出清理时直接执行
 
